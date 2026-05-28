@@ -258,7 +258,11 @@ class LichenTemplate:
             if param[1] == "text":
                 valueEntered = str("\'" + valueEntered + "\'")
             val = adsk.core.ValueInput.createByString(valueEntered)
-            self.params.add(param[0],val,param[1],"") 
+            p = self.params.itemByName(param[0])
+            if p == None:
+                self.params.add(param[0],val,param[1],"")
+            else:
+                p.expression = valueEntered
 
     def createJointComponent(self,parent: adsk.fusion.component,name: str):
         comp = parent.component.occurrences.addNewComponent(adsk.core.Matrix3D.create())
