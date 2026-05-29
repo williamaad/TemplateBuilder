@@ -706,7 +706,7 @@ class LichenTemplate:
                         
                         setup = self.machiningSetups.add(setupInput)
                         camParameters = setup.parameters
-                        camParameters.itemByName("job_programName").expression = "\'O" + str(2001 + i) + "\'"
+                        camParameters.itemByName("job_programName").expression = "\'O" + str(2011 + i) + "\'"
                         camParameters.itemByName("job_programComment").expression = "\'" + self.params.itemByName("partName").textValue + " " + self.ops[i][0] + " Softjaw\'"
                         camParameters.itemByName("job_workOffset").expression = str(i+1)
                         camParameters.itemByName("wcs_orientation_mode").expression = "\'axesZX\'"
