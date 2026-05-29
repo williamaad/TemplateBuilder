@@ -700,11 +700,8 @@ class LichenTemplate:
                         setupInput.machine = machine
                         setupInput.models = [self.softjawComponents[i][0]]
                         setupInput.name = str(machine.model +" " + self.ops[i][0] + " softjaw")
-                        if i == 0:
-                            setupInput.stockMode = adsk.cam.SetupStockModes.SolidStock
-                            setupInput.stockSolids = [self.softjawComponents[i][1]]
-                        else:
-                            setupInput.stockMode = adsk.cam.SetupStockModes.PreviousSetupStock
+                        setupInput.stockMode = adsk.cam.SetupStockModes.SolidStock
+                        setupInput.stockSolids = [self.softjawComponents[i][1]]
                         
                         
                         setup = self.machiningSetups.add(setupInput)
